@@ -41,7 +41,8 @@ class User extends Authenticatable
 
     public function gravatar($size="100")
     {
+        $gravatar_url = 'https://sdn.geekzu.org/avatar/';
         $hash = md5(strtolower(trim($this->attributes['email'])));
-        return 'https://dn-qiniu-avatar.qbox.me/avatar/$hash?s=$size';
+        return $gravatar_url.$hash.'?s='.$size;
     }
 }
